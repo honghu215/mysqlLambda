@@ -1,16 +1,12 @@
 var mysql = require('mysql');
-var config = require('./config.json');
 var pool = mysql.createPool({
-    host    : config.host,
-    user    : config.user,
-    password: config.password,
-    database: config.database
+    host    : process.env.host,
+    user    : process.env.user,
+    password: process.env.password,
+    database: process.env.database
 });
 
 exports.handler = (event, context, callback) => {
-    
-    console.log(pool);
-
     context.callbackWaitsForEmptyEventLoop = false;
     pool.getConnection(function(err, connection) {
         if(err) {
@@ -18,9 +14,8 @@ exports.handler = (event, context, callback) => {
         }else {
             connection.query('select * from user', function(error, results, fields) {
                 connection.release();
-        
                 if(error) {
-                    console.log('Connection failed.');
+                    //console.log('Connection failed.');
                     callback(error);
                 } else {
                     console.log(results);
@@ -30,3 +25,4 @@ exports.handler = (event, context, callback) => {
         }
     });
 };
+
