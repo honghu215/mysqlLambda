@@ -3,12 +3,12 @@
 ### Steps
 
    1. create function and upload code
-   ```
-   npm init
-   npm install mysql
-   zip -r mysqlLambda.zip *
-   ```  
-   create a lambda function and upload .zip file and save
+      ```
+      npm init
+      npm install mysql
+      zip -r mysqlLambda.zip *
+      ```  
+      create a lambda function and upload .zip file and save
    
    2. set parameters
 
