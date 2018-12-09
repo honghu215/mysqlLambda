@@ -1,6 +1,0 @@
-{
-    "host": "financialanalyzing.c1xgykb7az0r.us-east-1.rds.amazonaws.com",
-    "user": "financial",
-    "password" : "serverclient",
-    "database" : "financial"
-}
